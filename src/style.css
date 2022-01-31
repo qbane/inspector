@@ -29,8 +29,8 @@
 }
 
 .observablehq--field {
-  text-indent: -1em;
-  margin-left: 1em;
+  text-indent: -2em;
+  margin-left: 2em;
 }
 
 .observablehq--empty {
@@ -93,10 +93,18 @@
   font: var(--mono_fonts);
   overflow-x: auto;
   display: block;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .observablehq--error .observablehq--inspect {
   word-break: break-all;
   white-space: pre-wrap;
+}
+
+.observablehq--field > .observablehq--expanded > .observablehq--field {
+  margin-left: 1em;
+}
+
+.observablehq--field > .observablehq--expanded > .observablehq--token-closing {
+  margin-left: -1em;
 }

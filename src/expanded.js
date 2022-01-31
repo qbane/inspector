@@ -85,7 +85,9 @@ export default function inspectExpanded(object, _, name, proto) {
     });
   }
 
-  span.appendChild(document.createTextNode(arrayish ? "]" : "}"));
+  const closingSpan = span.appendChild(document.createElement("span"));
+  closingSpan.className = "observablehq--token-closing";
+  closingSpan.textContent = arrayish ? "]" : "}";
 
   return span;
 }

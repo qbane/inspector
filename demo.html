@@ -54,8 +54,8 @@
 }
 
 .observablehq--field {
-  text-indent: -1em;
-  margin-left: 1em;
+  text-indent: -2em;
+  margin-left: 2em;
 }
 
 .observablehq--empty {
@@ -130,7 +130,7 @@ a[href],
   overflow-x: auto;
   display: block;
   padding: 6px 0;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .observablehq--error {
@@ -145,6 +145,15 @@ a[href],
 .observablehq--running,
 .observablehq--changed {
   border-left-color: hsl(217, 13%, 70%);
+}
+
+/** appended **/
+.observablehq--field > .observablehq--expanded > .observablehq--field {
+    margin-left: 1em;
+}
+
+.observablehq--field > .observablehq--expanded > .observablehq--token-closing {
+  margin-left: -1em;
 }
 </style>
  
