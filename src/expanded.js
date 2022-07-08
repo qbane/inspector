@@ -64,8 +64,11 @@ export default function inspectExpanded(object, _, name, proto) {
     replace(span, inspectCollapsed(object, null, name, proto));
   });
 
+  let nonEmpty = false;
+
   fields = fields(object);
   for (let i = 0; !(next = fields.next()).done && i < 20; ++i) {
+    nonEmpty = true;
     span.appendChild(next.value);
   }
 
@@ -86,7 +89,7 @@ export default function inspectExpanded(object, _, name, proto) {
   }
 
   const closingSpan = span.appendChild(document.createElement("span"));
-  closingSpan.className = "observablehq--token-closing";
+  closingSpan.className = nonEmpty ? "observablehq--token-closing" : "observablehq--token-closing-inline";
   closingSpan.textContent = arrayish ? "]" : "}";
 
   return span;
