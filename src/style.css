@@ -10,6 +10,7 @@
   --syntax_known_variable: #005f87;
   --syntax_matchbracket: #20bbfc;
   --syntax_key: #6636b4;
+  --selection: #d7d4f0;
   --mono_fonts: 82%/1.5 Menlo, Consolas, monospace;
 }
 
@@ -26,6 +27,26 @@
 .observablehq--collapsed,
 .observablehq--inspect a {
   cursor: pointer;
+}
+
+.observablehq--caret {
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.observablehq--string-expand {
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 80%;
+  background: #eee;
+  color: #888;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.observablehq--string-expand:hover {
+  color: #222;
 }
 
 .observablehq--field {
@@ -57,8 +78,8 @@
   color: var(--syntax_atom);
 }
 
-.observablehq--number,
 .observablehq--bigint,
+.observablehq--number,
 .observablehq--date,
 .observablehq--regexp,
 .observablehq--symbol,
@@ -93,13 +114,24 @@
   font: var(--mono_fonts);
   overflow-x: auto;
   display: block;
+  padding: 6px 0;
   white-space: pre-wrap;
+}
+
+.observablehq--error {
+  border-left-color: #e7040f;
 }
 
 .observablehq--error .observablehq--inspect {
   word-break: break-all;
   white-space: pre-wrap;
 }
+
+.observablehq--running,
+.observablehq--changed {
+  border-left-color: hsl(217, 13%, 70%);
+}
+
 
 .observablehq--field > .observablehq--expanded > .observablehq--field {
   margin-left: 1em;
